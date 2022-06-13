@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HWWEB.Models.Consignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityOfUnits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryCondition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broker.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrokerageCompany.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityOfUnits)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryCondition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShippingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broker.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrokerageCompany.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConsignmentID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ConsignmentID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConsignmentID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

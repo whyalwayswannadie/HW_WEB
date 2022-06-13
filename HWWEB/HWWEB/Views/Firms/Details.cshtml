@@ -1,0 +1,26 @@
+﻿@model HWWEB.Models.Firm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Firm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FirmID }, new {@class="btn btn-primary"}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

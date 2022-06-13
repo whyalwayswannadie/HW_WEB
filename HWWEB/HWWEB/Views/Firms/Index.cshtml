@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HWWEB.Models.Firm>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirmName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirmName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FirmID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FirmID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FirmID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

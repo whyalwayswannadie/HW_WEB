@@ -1,0 +1,66 @@
+﻿@model HWWEB.Models.Consignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityOfUnits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfUnits)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Broker.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Broker.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrokerageCompany.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrokerageCompany.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsignmentID}, new {@class = "btn btn-primary"}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
